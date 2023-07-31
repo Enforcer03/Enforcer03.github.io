@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>Ved Umrajkar - Portfolio</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            background-color: #222; /* Dark background */
+            overflow-y: auto; /* Enable scrolling for main content */
+        }
+
+/* ... (your existing styles) ... */
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background-color: #4a2e18; /* Dark brown photo palette background */
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 21%; /* Fixed width for the photo palette */
+            height: 100%; /* Full height for the photo palette */
+            overflow-y: auto; /* Enable scrolling for photo palette */
+            border-radius: 20px; /* Rounded corners for the photo palette */
+        }
+
+        .header img {
+            width: 80%; /* Adjust the size of the photo */
+            height: auto;
+            border-radius: 50%; /* Rounded corners for the photo */
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            color: #3cb03c; /* Green name color */
+        }
+
+        .header p {
+            font-size: 18px;
+        }
+
+        .location-info {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            color: #f1f1f1; /* Light text color for location */
+        }
+
+        .location-info i {
+            margin-right: 5px;
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #007BFF;
+            font-size: 24px;
+            margin: 5px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #0056b3;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 25%; /* Shift content to the right to accommodate the photo palette */
+        }
+
+
+                /* styles.css */
+
+        /* About Me Section */
+/* styles.css */
+
+/* styles.css */
+
+/* About Me Section */
+        .about-me {
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: "Your Fancy Font", cursive; /* Replace "Your Fancy Font" with the actual font you want to use */
+        }
+
+        .about-me h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            background-color: #FFDAB9; /* Peach highlight color */
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .typing-text {
+            font-size: 18px;
+            line-height: 1.6;
+            white-space: nowrap; /* Prevent line breaks in the typing animation */
+            overflow: hidden; /* Hide overflowing text during animation */
+        }
+
+        /* Blinking caret */
+        .typing-text::after {
+            content: "|";
+            animation: blink-caret 0.75s step-end infinite;
+            color: #333; /* Dark container background color */
+        }
+
+
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 30px auto; /* Center the container */
+            background-color: #333; /* Dark container background */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Improved box shadow with higher elevation */
+            border-radius: 15px; /* Slightly rounded corners */
+            padding: 30px; /* Increased padding for better spacing */
+            border: 2px solid #1E90FF; /* Dark blue border */
+        }
+
+        .container h2 {
+            font-size: 28px; /* Larger heading font size */
+            margin-bottom: 20px; /* Increased margin for better spacing */
+            color: #fff; /* White text color */
+            background-color: #1E90FF; /* Dark blue heading background color */
+            padding: 10px 20px; /* Added padding for the heading */
+            border-radius: 8px; /* Rounded corners for the heading */
+        }
+
+        .container p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #f1f1f1; /* Light text color */
+        }
+
+        .container ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: #f1f1f1; /* Light text color for list items */
+        }
+
+        .container li {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+
+
+        .section {
+            padding: 20px;
+            margin-bottom: 30px;
+            background-color: #444; /* Dark section background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .section-content {
+            display: none;
+        }
+
+        .section.active .section-content {
+            display: block;
+        }
+
+        .section-content-inner {
+            background-color: #555; /* Dark section content background */
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        .section-content-inner p {
+            margin: 0;
+        }
+
+        .download-link {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 18px;
+            color: #fff;
+            background-color: #3cb03c; /* Green button background color */
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #007BFF;
+            font-size: 24px;
+            margin: 5px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #0056b3;
+        }
+
+        
+
+    </style>
+</head>
+
+<body class="main-content">
+    <header class="header">
+        <img src="images/dp.jpg" alt="Your Photograph">
+        <h1>Ved Umrajkar</h1>
+        <p>a passionate Data Scientist</p>
+        <div class="location-info">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>IIT Roorkee</p>
+        </div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/ved-umrajkar" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Enforcer03" target="_blank"><i class="fab fa-github"></i></a>
+            <!-- <a href="https://github.com/Enforcer03" target="_blank"><i class="fab fa-github"></i></a> -->
+
+            <!-- Add more social links as needed -->
+        </div>
+        <a href="my_resume_19072023.pdf" class="download-link" download>
+            Download CV
+        </a>
+    </header>
+
+    <!-- <div class="about-me">
+        <h2>I'm Ved Umrajkar</h2>
+        <p>I love to disseminate and infer complex data</p>
+    </div>
+ -->
+
+
+    <div class="container">
+        <section>
+            <h2 class="collapsible">About Me</h2>
+            <div>
+                    <p>
+                        I am a dedicated and enthusiastic Data Scientist with a strong background in mathematics and computing. My passion lies in solving real-world problems using data-driven approaches and advanced machine learning techniques. I enjoy working with complex data sets and deriving valuable insights from them.
+                    </p>
+                    <p>
+                        My technical skills include Deep Learning, Machine Learning, Data Structures, Database Management, Computer Vision, and Natural Language Processing. I am proficient in Python, C++, and SQL and have experience with popular libraries such as PyTorch, TensorFlow, Numpy, Pandas, and Sklearn.
+                    </p>
+            </div>
+        </section>
+    </div>
+
+
+    <div class="container">
+        <section>
+            <h2 class="collapsible">Experience</h2>
+            <div class="content">
+              <p><strong>Hloov</strong> | Data Science Intern</p>
+              <p>Remote | January – March 2023</p>
+              <ul>
+                Worked on CNNs for crack detection in buildings.
+              </ul>
+            </div>
+          </section>
+    </div>
+
+        
+        
+    <div class="container">
+
+        <section>
+            <h2 class="collapsible">My Projects</h2>
+            <div class="section-content">
+                <div class="section-content-inner">
+                    <p>
+                        Project 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <p>
+                        Project 2: Sed gravida, nisl a volutpat lacinia, metus libero feugiat tellus.
+                    </p>
+                    <p>
+                        Project 3: Ac commodo mauris est nec ligula.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+        
+        <section>
+            <h2 class="collapsible">Achievements</h2>
+            <div class="section-content">
+                <div class="section-content-inner">
+                    <p>
+                        <strong>Achievement 1:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida, nisl a volutpat lacinia, metus libero feugiat tellus, ac commodo mauris est nec ligula.
+                    </p>
+                    <p>
+                        <strong>Achievement 2:</strong> In faucibus mi eget purus consectetur varius. Etiam elementum elit et dolor luctus, ac suscipit elit scelerisque. Integer facilisis, libero ac facilisis sodales, est sem mollis ipsum.
+                    </p>
+                    <p>
+                        <strong>Achievement 3:</strong> Nulla aliquet nibh nec metus varius, ut efficitur nulla fermentum. Quisque fringilla interdum sagittis. Duis non lorem vel libero pellentesque vulputate.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+                // script.js
+
+        // Recursive typing effect
+        function typeWriter(text, index, interval, element) {
+            if (index < text.length) {
+                element.innerHTML += text.charAt(index);
+                setTimeout(function () {
+                    typeWriter(text, index + 1, interval, element);
+                }, interval);
+            }
+        }
+
+        // Initiate the typing effect
+        document.addEventListener("DOMContentLoaded", function () {
+            const textElement = document.querySelector(".typing-text");
+            const text = "I love to disseminate and infer complex data";
+            const typingInterval = 100; // Adjust the typing speed (in milliseconds)
+            typeWriter(text, 0, typingInterval, textElement);
+});
+
+    </script>
+</body>
+
+</html>
